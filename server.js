@@ -55,8 +55,12 @@ function fetchFromSource() {
                     if (resolved) return;
                     clearTimeout(timer);
                     resolved = true;
-                    try { resolve(JSON.parse(Buffer.concat(chunks).toString('utf-8'))); }
-                    catch (e) { reject(new Error('JSON parse error')); }
+                    const text = Buffer.concat(chunks).toString('utf-8');
+                    try { resolve(JSON.parse(text)); }
+                    catch (e) {
+                        console.log('Parse error. Response starts with:', text.substring(0, 200));
+                        reject(new Error('JSON parse error - got HTML/blocked response'));
+                    }
                 });
                 stream.on('error', err => {
                     clearTimeout(timer);
@@ -321,27 +325,27 @@ const server = http.createServer(async (req, res) => {
 });
 
 // ─── Start ───
-async function start() {
+// Start server FIRST, then fetch in background
+server.listen(PORT, () => {
+    console.log('');
+    console.log('  SideStore IPA Server Running! 🚀');
+    console.log('  ─────────────────────────────────');
+    console.log(`  Admin:  http://localhost:${PORT}/`);
+    console.log(`  JSON:   http://localhost:${PORT}/apps.json`);
+    console.log(`  Apps:   ${sideStoreData ? sideStoreData.apps.length : 0}`);
+    console.log('');
+
+    // Fetch in background if no cached data
     if (!sideStoreData) {
-        try {
-            console.log('Fetching initial data...');
-            const raw = await fetchFromSource();
-            const result = smartUpdate(raw);
-            console.log(`Loaded: ${result.total} apps`);
-        } catch (err) {
-            console.log('Could not fetch:', err.message);
-        }
+        console.log('Fetching data in background...');
+        fetchFromSource()
+            .then(raw => {
+                const result = smartUpdate(raw);
+                console.log(`Loaded: ${result.total} apps`);
+            })
+            .catch(err => {
+                console.log('Background fetch failed:', err.message);
+                console.log('Use the admin page to update manually.');
+            });
     }
-
-    server.listen(PORT, () => {
-        console.log('');
-        console.log('  SideStore IPA Server Running! 🚀');
-        console.log('  ─────────────────────────────────');
-        console.log(`  Admin:  http://localhost:${PORT}/`);
-        console.log(`  JSON:   http://localhost:${PORT}/apps.json`);
-        console.log(`  Apps:   ${sideStoreData ? sideStoreData.apps.length : 0}`);
-        console.log('');
-    });
-}
-
-start();
+});
