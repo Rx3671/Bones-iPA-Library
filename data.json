@@ -1,5 +1,5 @@
 {
-  "name": "Dzmoha IPA Library",
+  "name": "Bones IPA Library",
   "identifier": "com.dzmoha.sidestore.source",
   "subtitle": "By Mjeed",
   "iconURL": "https://m.media-amazon.com/images/I/61H08WURv2L._AC_UF894,1000_QL80_.jpg",
@@ -17574,5 +17574,5 @@
       ]
     }
   ],
-  "description": "Using Dzmoha as IPA library for SideStore. Maintained by Mjeed"
+  "description": "Using Dzmoha as IPA library"
 }
