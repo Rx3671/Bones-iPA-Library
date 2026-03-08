@@ -65,7 +65,7 @@ function toSideStoreApp(a) {
     return {
         beta: false,
         bundleIdentifier: a.bundleIdentifier || a.bundleID || '',
-        developerName: a.developerName || '',
+        developerName: a.developerName || 'Dzmoha',
         downloadURL: a.downloadURL || a.down || '',
         iconURL: a.iconURL || a.icon || '',
         localizedDescription: a.localizedDescription || '',
@@ -123,9 +123,10 @@ async function main() {
     }
 
     const result = {
-        name: 'SideStore IPA Source',
-        identifier: 'com.sidestore.ipa.source',
-        subtitle: 'Cracked & Modified IPA Apps',
+        name: 'Dzmoha IPA Library for SideStore',
+        identifier: 'com.dzmoha.sidestore.source',
+        subtitle: 'By Mjeed (Agent Booth)',
+        description: 'Using Dzmoha as IPA library for SideStore. Maintained by Mjeed (Agent Booth).',
         iconURL: 'https://dzmohaipa.com/ipa/Moha.png',
         website: 'https://dzmohaipa.com/ipa/',
         apps: finalApps
