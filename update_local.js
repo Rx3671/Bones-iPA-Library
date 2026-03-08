@@ -123,12 +123,12 @@ async function main() {
     }
 
     const result = {
-        name: 'Dzmoha IPA Library for SideStore',
+        name: 'Dzmoha IPA Library',
         identifier: 'com.dzmoha.sidestore.source',
-        subtitle: 'By Mjeed (Agent Booth)',
-        description: 'Using Dzmoha as IPA library for SideStore. Maintained by Mjeed (Agent Booth).',
-        iconURL: 'https://dzmohaipa.com/ipa/Moha.png',
-        website: 'https://dzmohaipa.com/ipa/',
+        subtitle: 'By Mjeed',
+        description: 'Using Dzmoha as IPA library for SideStore. Maintained by Mjeed.',
+        iconURL: 'https://m.media-amazon.com/images/I/61H08WURv2L._AC_UF894,1000_QL80_.jpg',
+        website: 'https://sidestore-ipa-4epj.onrender.com/apps.json',
         apps: finalApps
     };
 
