@@ -2,8 +2,8 @@
   "name": "Bones IPA Library",
   "identifier": "com.bones.sidestore.source",
   "subtitle": "By Mjeed",
-  "iconURL": "https://m.media-amazon.com/images/I/61H08WURv2L._AC_UF894,1000_QL80_.jpg",
-  "website": "https://sidestore-ipa-4epj.onrender.com/apps.json",
+  "iconURL": "https://image.tmdb.org/t/p/original/5X2THkFhsLJpSHNNhFQuydpM7ek.jpg",
+  "website": "https://raw.githubusercontent.com/Rx3671/SideStore-iPA/refs/heads/main/data.json",
   "apps": [
     {
       "beta": false,
@@ -17574,5 +17574,5 @@
       ]
     }
   ],
-  "description": "Using  as IPA library"
+  "description": "Using Dzmoha IPA library"
 }
