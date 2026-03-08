@@ -1,9 +1,9 @@
 {
-  "name": "Dzmoha IPA Library for SideStore",
+  "name": "Dzmoha IPA Library Designed for SideStore",
   "identifier": "com.dzmoha.sidestore.source",
-  "subtitle": "By Mjeed (Agent Booth)",
-  "iconURL": "https://dzmohaipa.com/ipa/Moha.png",
-  "website": "https://dzmohaipa.com/ipa/",
+  "subtitle": "By Mjeed",
+  "iconURL": "https://m.media-amazon.com/images/I/61H08WURv2L._AC_UF894,1000_QL80_.jpg",
+  "website": "https://sidestore-ipa-4epj.onrender.com/apps.json",
   "apps": [
     {
       "beta": false,
